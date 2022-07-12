@@ -7,7 +7,7 @@ export const useCities = defineStore("cities", {
   state: () => {
     return {
       cities: [] as City[],
-      cityNames: ["nantes", "bordeaux", "lyon", "marseille", "paris"],
+      cityNames: ["Paris", "Madrid", "London", "Rome", "Berlin"],
       selectedCities: [] as string[],
     };
   },
@@ -24,8 +24,19 @@ export const useCities = defineStore("cities", {
           return res.data;
         })
       );
-      this.cities = plainToInstance(City, responses as City[]);
+      this.cities = plainToInstance(City, responses.flat() as [], {
+        strategy: "excludeAll",
+      });
       console.info("cities fetched");
+    },
+  },
+
+  getters: {
+    getCityObjByName: (state) => {
+      return (cityName: string) =>
+        state.cities
+          .filter((city) => city.name.toLowerCase() === cityName.toLowerCase())
+          .pop();
     },
   },
 });
