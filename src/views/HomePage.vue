@@ -1,7 +1,9 @@
 <template>
   <div class="home-page">
     <div class="home-page__weather-chart">
-      <WeatherChart chart-title="5 day weather forecast"></WeatherChart>
+      <WeatherChart
+        chart-title="5 day weather forecast - temperature"
+      ></WeatherChart>
     </div>
     <AppSelect
       v-model="cityStore.selectedCities"
