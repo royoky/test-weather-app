@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { list, WeatherData } from "../models/weatherData.model";
+import { WeatherData } from "../models/weatherData.model";
 
 export const useWeatherData = defineStore("weatherData", {
   state: () => {

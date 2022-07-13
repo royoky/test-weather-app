@@ -1,11 +1,11 @@
 <template>
   <div class="home-page">
     <div class="home-page__weather-chart">
-      <WeatherChart msg="weather chart"></WeatherChart>
+      <WeatherChart chart-title="5 day weather forecast"></WeatherChart>
     </div>
     <AppSelect
-      class="home-page__city-select"
       v-model="cityStore.selectedCities"
+      class="home-page__city-select"
       :items="cityStore.cityNames"
       label="Select one or more cities"
     >

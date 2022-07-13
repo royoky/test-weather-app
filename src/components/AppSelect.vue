@@ -1,11 +1,11 @@
 <template>
-  <v-combobox
+  <VCombobox
     v-model="selectedItems"
     :items="items"
     :label="label"
     multiple
     chips
-  ></v-combobox>
+  ></VCombobox>
 </template>
 
 <script setup lang="ts">

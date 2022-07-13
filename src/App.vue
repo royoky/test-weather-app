@@ -1,17 +1,17 @@
 <template>
-  <v-app>
-    <v-app-bar
+  <VApp>
+    <VAppBar
       color="teal-darken-4"
       image="http://www.pixelstalk.net/wp-content/uploads/2016/05/Blue-sunny-sky.jpg"
     >
-      <v-app-bar-title
-        ><div class="app-bar-title">Weather Forecast</div></v-app-bar-title
+      <VAppBarTitle
+        ><div class="app-bar-title">Weather Forecast</div></VAppBarTitle
       >
-    </v-app-bar>
-    <v-main>
+    </VAppBar>
+    <VMain>
       <HomePage />
-    </v-main>
-  </v-app>
+    </VMain>
+  </VApp>
 </template>
 
 <script setup lang="ts">

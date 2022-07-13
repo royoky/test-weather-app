@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref } from "vue";
+import { computed } from "vue";
 import { storeToRefs } from "pinia";
 import { Chart } from "highcharts-vue";
 import { WeatherData, list } from "../models/weatherData.model";
@@ -16,12 +16,12 @@ const weatherDataStore = useWeatherData();
 const { weatherData } = storeToRefs(weatherDataStore);
 
 const props = defineProps<{
-  msg: string;
+  chartTitle: string;
 }>();
 
 const getChartOptions = computed(() => {
   return {
-    title: { text: "Temperatures over 5 days" },
+    title: { text: props.chartTitle },
     series: weatherData.value.map((wd: WeatherData) => {
       const data = wd.list?.map((elt: list) => {
         return {
