@@ -24,9 +24,7 @@ export const useCities = defineStore("cities", {
           return res.data;
         })
       );
-      this.cities = plainToInstance(City, responses.flat() as [], {
-        strategy: "excludeAll",
-      });
+      this.cities = plainToInstance(City, responses.flat() as [], {});
       console.info("cities fetched");
     },
   },

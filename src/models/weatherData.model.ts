@@ -1,7 +1,7 @@
-import { Expose } from "class-transformer";
+import { Expose, Type } from "class-transformer";
 import { City } from "./city.model";
 
-export interface mainData {
+interface MainData {
   temp: number;
   feels_like: number;
   temp_min: number;
@@ -13,21 +13,22 @@ export interface mainData {
   temp_kf: number;
 }
 
-export interface windData {
+interface WindData {
   speed: number;
   deg: number;
   gust: number;
 }
 
-export interface list {
-  main: mainData;
-  wind: windData;
+export interface List {
+  main: MainData;
+  wind: WindData;
+  dt: number;
 }
 
 export class WeatherData {
   @Expose()
-  list: list[];
+  list: List[];
 
-  @Expose()
+  @Type(() => City)
   city: City;
 }

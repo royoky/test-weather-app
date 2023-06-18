@@ -1,10 +1,10 @@
 <template>
   <div class="home-page">
-    <div class="home-page__weather-chart">
+    <VCard class="home-page__weather-chart">
       <WeatherChart
         chart-title="5 day weather forecast - temperature"
       ></WeatherChart>
-    </div>
+    </VCard>
     <AppSelect
       v-model="cityStore.selectedCities"
       class="home-page__city-select"
