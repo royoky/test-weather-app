@@ -30,8 +30,11 @@ const getChartOptions = computed(() => {
   return {
     chart: {
       type: "spline",
+      styledMode: true,
     },
-    title: { text: props.chartTitle },
+    title: {
+      text: props.chartTitle,
+    },
     yAxis: {
       title: {
         text: "Temperature (°C)",
@@ -70,5 +73,5 @@ const getChartOptions = computed(() => {
 </script>
 
 <style>
-@import "../styles/dark-unica.css";
+@import "../styles/dark-unica.scss";
 </style>
